@@ -9,8 +9,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       
-      <Card type="feature" title="Money" action="3 Updates" />
-      <Card type="offer" title="Credit cards" action="Advertiser disclosure" />
+      <Card type="feature" title="Money" action="3 updates" cta="Go to Money" />
+      <Card type="offer" title="Credit cards" action="Advertiser disclosure" cta="View your offers" />
 
       <style jsx global>{`
         html,

@@ -1,4 +1,4 @@
-export default function Card({ type, title, action }) { 
+export default function Card({ type, title, action, cta }) { 
   return (
     <div>
     <section>
@@ -20,21 +20,23 @@ export default function Card({ type, title, action }) {
 </svg>
           </a>
         </div>
-        <div className="body">
+        <div className={"body-" + type}>
           <h1>You are pre-approved for all of the awesome cards</h1>
           <p>This is the description of the offer that we just talked about above</p>
         </div>
-        <a href="#" className="footer">View your offers</a>
+        <a href="#" className="footer">{cta}</a>
     </section>
 
-      <style jsx>{`
+      <style jsx>{`       
         section {
           background: white;
-          min-width: 375px;
+          width: 80vw;
           max-width: 500px;
           
           display: flex;
           flex-direction: column;
+
+          font-family: inter;
           font-size: 0.9em;
           
           box-shadow: 0px 0px 1px rgba(0,0,0,0.1),
@@ -61,7 +63,9 @@ export default function Card({ type, title, action }) {
           align-items: center;
           padding: 12px;
           border-bottom: 1px solid #f4f4f4;
-          font-weight: 600;
+          background: rgb(255,255,255);
+          background: linear-gradient(-170deg, rgba(100,100,250,0.15) 0%, rgba(255,255,255,0) 50%),
+                      linear-gradient(-15deg, rgba(255,100,250,0.15) 0%, rgba(255,255,255,0) 50%);
         }
         
         .cardname {
@@ -78,8 +82,9 @@ export default function Card({ type, title, action }) {
           align-items: center;
           font-size:0.9em;
           text-decoration: none;
-          padding: 4px 6px;
-          background: #f7f7f7;
+          padding: 4px 6px 4px 8px;
+          background-color: rgba(255,255,255,0.5);
+          box-shadow: 0 0 1px rgba(100,100,255,0.5);
           border-radius: 6px;
           color: #6060ff;
           transition: background 0.1s ease-in-out, color 0.1s ease-in-out;
@@ -96,9 +101,9 @@ export default function Card({ type, title, action }) {
           flex-direction: row;
           justify-content: space-between;
           align-items: center;
-          padding: 8px;
+          padding: 12px;
           background: #f9f9f9;
-          font-size: 0.8em;
+          font-size: 0.75em;
           color: #555;
         }            
         
@@ -120,7 +125,7 @@ export default function Card({ type, title, action }) {
           display: none;
         }
         
-        .body {
+        .body-offer {
           padding: 16px 160px 64px 16px;
           background-image: url(creditcards.png);
           background-size: 60%;
@@ -128,12 +133,17 @@ export default function Card({ type, title, action }) {
           background-position: 140% 10%;
         }
         
-        .body h1 {
+        .body-offer h1 {
+          font-size: 1.5em;
+          font-family: inter-bold;
+          line-height: 1.25em;
           margin: 0 0 0.4em 0;
           color: #333;
         }
         
-        .body p {
+        .body-offer p {
+          font-family: inter-light;
+          line-height: 1.25em;
           color: #555;
           margin: 0;
         }
@@ -141,7 +151,6 @@ export default function Card({ type, title, action }) {
         .footer {
           padding: 16px;
           border-top: 1px solid #f4f4f4;
-          font-weight: 600;
           color: #6060ff;
           text-decoration: none;
           transition: background 0.1s ease-in-out, color 0.1s ease-in-out, border 0.1s ease-in-out;
