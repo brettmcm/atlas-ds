@@ -21,7 +21,7 @@ export default function Card({ type, title, action }) {
           </a>
         </div>
         <div className="body">
-          <h1>You're pre-approved for all of the awesome cards</h1>
+          <h1>You are pre-approved for all of the awesome cards</h1>
           <p>This is the description of the offer that we just talked about above</p>
         </div>
         <a href="#" className="footer">View your offers</a>
@@ -45,6 +45,13 @@ export default function Card({ type, title, action }) {
 
           background: rgb(250,250,250);
           background: linear-gradient(0deg, rgba(250,250,250,1) 0%, rgba(255,255,255,1) 100%);
+
+          pointer-events: none;
+          user-select: none;
+        }
+
+        a:hover {
+            cursor:default;
         }
         
         .feature {
@@ -75,10 +82,8 @@ export default function Card({ type, title, action }) {
           background: #f7f7f7;
           border-radius: 6px;
           color: #6060ff;
-        }
-        
-        .feature a {
           transition: background 0.1s ease-in-out, color 0.1s ease-in-out;
+          pointer-events: all;
         }
         
         .feature a:hover {
@@ -104,6 +109,7 @@ export default function Card({ type, title, action }) {
         .offer a {
           color: #888;
           transition: color 0.1s ease-in-out;
+          pointer-events: all;
         }
         
         .offer a:hover {
@@ -139,6 +145,7 @@ export default function Card({ type, title, action }) {
           color: #6060ff;
           text-decoration: none;
           transition: background 0.1s ease-in-out, color 0.1s ease-in-out, border 0.1s ease-in-out;
+          pointer-events: all;
         }
         
         .footer:hover {
